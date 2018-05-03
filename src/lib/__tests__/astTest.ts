@@ -1,83 +1,40 @@
 import { dts } from '../ast';
+import { readFile } from './utils';
 
 describe('ast', () => {
   describe('dts', () => {
     it('returns dts file with no translation', () => {
-      const code = dts([]);
-      expect(code).toEqual(
-        `
-declare module \"react-native-i18n\" {
-    var fallbacks: boolean;
-    var translations: {
-        [keys: string]: any;
-    };
-}
-
-declare module \"*.json\" {
-    const value: any;
-    export default value;
-}
-`.trim(),
-      );
+      const actual = dts([]);
+      const expected = readFile('./src/lib/__tests__/expected/no-keys.d.ts');
+      expect(actual).toEqual(expected);
     });
 
     it('returns dts file with one translation', () => {
-      const code = dts([
+      const actual = dts([
         {
           interpolations: ['value'],
           key: 'common.cancel',
         },
       ]);
-      expect(code).toEqual(
-        `
-declare module \"react-native-i18n\" {
-    var fallbacks: boolean;
-    var translations: {
-        [keys: string]: any;
-    };
-    function t(key: \"common.cancel\", opts: {
-        value: any;
-    }): string;
-}
-
-declare module \"*.json\" {
-    const value: any;
-    export default value;
-}
-`.trim(),
-      );
+      const expected = readFile('./src/lib/__tests__/expected/one-key.d.ts');
+      expect(actual).toEqual(expected);
     });
 
     it('returns dts file with multiple translations', () => {
-      const code = dts([
+      const actual = dts([
+        {
+          interpolations: ['value'],
+          key: 'common.cancel',
+        },
         {
           interpolations: [],
           key: 'common.ok',
         },
-        {
-          interpolations: ['value'],
-          key: 'common.cancel',
-        },
       ]);
-      expect(code).toEqual(
-        `
-declare module \"react-native-i18n\" {
-    var fallbacks: boolean;
-    var translations: {
-        [keys: string]: any;
-    };
-    function t(key: \"common.ok\"): string;
-    function t(key: \"common.cancel\", opts: {
-        value: any;
-    }): string;
-}
-
-declare module \"*.json\" {
-    const value: any;
-    export default value;
-}
-`.trim(),
+      const expected = readFile(
+        './src/lib/__tests__/expected/multiple-keys.d.ts',
       );
+      expect(actual).toEqual(expected);
     });
   });
 });
