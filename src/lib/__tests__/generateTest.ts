@@ -1,4 +1,4 @@
-import { mkdirSync, unlinkSync, rmdirSync } from 'fs';
+import { mkdirSync, rmdirSync, unlinkSync } from 'fs';
 import * as path from 'path';
 import { OUTPUT_FILE_NAME } from '../../constants';
 import { generate } from '../generate';
