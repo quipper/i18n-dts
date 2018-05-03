@@ -1,0 +1,86 @@
+{
+  "extends": ["tslint:latest"],
+  "rules": {
+    "member-access": false,
+    "member-ordering": [
+      true,
+      {
+        "order": "fields-first"
+      }
+    ],
+    "no-any": true,
+    "no-inferrable-types": [false],
+    "no-internal-module": true,
+    "no-var-requires": true,
+    "typedef": [false],
+    "typedef-whitespace": [
+      true,
+      {
+        "call-signature": "nospace",
+        "index-signature": "nospace",
+        "parameter": "nospace",
+        "property-declaration": "nospace",
+        "variable-declaration": "nospace"
+      },
+      {
+        "call-signature": "space",
+        "index-signature": "space",
+        "parameter": "space",
+        "property-declaration": "space",
+        "variable-declaration": "space"
+      }
+    ],
+    "ban": false,
+    "no-duplicate-variable": true,
+    "no-empty-interface": false,
+    "no-implicit-dependencies": [true, "peer"],
+    "no-null-keyword": true,
+    "no-switch-case-fall-through": true,
+    "no-use-before-declare": true,
+    "switch-default": true,
+    "triple-equals": [true, "allow-undefined-check"],
+    "eofline": true,
+    "indent": [true, "spaces"],
+    "max-line-length": [true, 150],
+    "no-require-imports": false,
+    "no-trailing-whitespace": true,
+    "object-literal-sort-keys": false,
+    "trailing-comma": [
+      true,
+      {
+        "multiline": "always",
+        "singleline": "never"
+      }
+    ],
+    "align": [true],
+    "class-name": true,
+    "comment-format": [true, "check-space"],
+    "interface-name": [false],
+    "jsdoc-format": true,
+    "no-consecutive-blank-lines": [true],
+    "no-parameter-properties": false,
+    "one-line": [
+      true,
+      "check-open-brace",
+      "check-catch",
+      "check-else",
+      "check-finally",
+      "check-whitespace"
+    ],
+    "quotemark": [
+      true,
+      "single",
+      "jsx-double",
+      "avoid-escape",
+      "avoid-template"
+    ],
+    "semicolon": [true, "always"],
+    "variable-name": [
+      true,
+      "check-format",
+      "allow-leading-underscore",
+      "allow-pascal-case",
+      "ban-keywords"
+    ]
+  }
+}

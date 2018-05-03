@@ -1,0 +1,47 @@
+{
+  "name": "react-native-typed-i18n",
+  "version": "0.1.0",
+  "description": "A tiny d.ts file generator for react-native-i18n",
+  "bin": {
+    "typed-i18n": "build/bin/index.js"
+  },
+  "scripts": {
+    "tsc": "tsc",
+    "test": "jest"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "commander": "^2.15.1",
+    "mkdirp": "^0.5.1",
+    "typescript": "^2.7.2"
+  },
+  "devDependencies": {
+    "@types/commander": "^2.12.2",
+    "@types/jest": "^22.2.3",
+    "@types/mkdirp": "^0.5.2",
+    "@types/node": "^9.4.6",
+    "jest": "^22.4.3",
+    "prettier": "^1.12.1",
+    "ts-jest": "^22.4.4",
+    "tslint": "^5.9.1",
+    "tslint-config-prettier": "^1.12.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(Test))\\.(jsx?|tsx?)$",
+    "testPathIgnorePatterns": [
+      "<rootDir>/build/",
+      "<rootDir>/node_modules/"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "react-native-typed-i18n": {
+    "model": "./en.json",
+    "outputDir": "./typings"
+  }
+}

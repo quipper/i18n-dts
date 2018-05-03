@@ -1,0 +1,92 @@
+version: 2
+jobs:
+  bundle_dependencies:
+    working_directory: ~/react-native-typed-i18n
+    docker:
+      - image: circleci/node:8.7.0
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - react-native-typed-i18n-{{ arch }}-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - react-native-typed-i18n-{{ arch }}
+      - run:
+          name: System information
+          command: |
+            echo "Node $(node -v)"
+            echo "npm $(node -v)"
+      - run:
+          name: Install dependencies
+          command: 'npm install'
+      - save_cache:
+          key: react-native-typed-i18n-{{ arch }}-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          paths:
+            - ~/react-native-typed-i18n/node_modules
+
+  compile_and_test:
+    working_directory: ~/react-native-typed-i18n
+    docker:
+      - image: circleci/node:8.7.0
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - react-native-typed-i18n-{{ arch }}-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - react-native-typed-i18n-{{ arch }}
+      - run:
+          name: Install dependencies
+          command: 'npm install'
+      - run:
+          name: Compile TypeScript
+          command: 'npm run tsc'
+      - run:
+          name: Unit Test
+          command: 'npm test'
+
+  deploy_to_npm:
+    working_directory: ~/react-native-typed-i18n
+    docker:
+      - image: circleci/node:8.7.0
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - react-native-typed-i18n-{{ arch }}-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - react-native-typed-i18n-{{ arch }}
+      - run:
+          name: Install dependencies
+          command: 'npm install'
+      - run:
+          name: Compile TypeScript
+          command: 'npm run tsc'
+      - run:
+          name: Login to npm and publish
+          command: |
+            echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+            npm publish
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - bundle_dependencies:
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              only: /.*/
+      - compile_and_test:
+          requires:
+            - bundle_dependencies
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              only: /.*/
+      - deploy_to_npm:
+          requires:
+            - compile_and_test
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              ignore: /.*/

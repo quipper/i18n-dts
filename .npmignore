@@ -1,0 +1,30 @@
+*.DS_Store
+
+# Xcode
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcuserstate
+project.xcworkspace/
+xcuserdata/
+
+# Android
+android/local.properties
+android/.gradle/
+android/.idea/
+android/gradlew
+android/build
+android/gradlew.bat
+android/gradle/
+
+# Config files
+.babelrc
+tsconfig.json
+tslint.json
+yarn.lock
+
+# Others
+example/
+node_modules/
+src/
