@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
 import I18n from './locale';
 
-interface Props {}
-
-interface State {}
-
 const instructions = Platform.select({
   ios: I18n.t('platform.ios'),
   android: I18n.t('platform.android'),
@@ -30,7 +26,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default class App extends Component<Props, State> {
+export default class App extends Component {
   constructor(props) {
     super(props);
   }
