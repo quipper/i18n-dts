@@ -16,11 +16,11 @@ export const generate = (
   const keys = flattenKeys(translations);
   const data = dts(keys);
   const outputPath = path.join(dirPath, OUTPUT_FILE_NAME);
-  return execWrite(outputPath, data);
+  return execWriteFile(outputPath, data);
 };
 
-const execWrite = (pathFile: PathLike, data: string): Promise<void> => {
-  return new Promise<void>((resolve, reject) => {
+const execWriteFile = (pathFile: PathLike, data: string): Promise<void> =>
+  new Promise<void>((resolve, reject) => {
     writeFile(pathFile, data, error => {
       if (error) {
         reject(error);
@@ -29,4 +29,3 @@ const execWrite = (pathFile: PathLike, data: string): Promise<void> => {
       }
     });
   });
-};
