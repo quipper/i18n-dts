@@ -27,14 +27,14 @@ export const isSource = (extname: string): boolean => {
 };
 
 export const getTranslationFromModel = (
-  filepath: string,
+  filePath: string,
 ): JsonObject | Error => {
-  if (!existsSync(filepath)) {
-    return Error('model file doesn not exist');
+  if (!existsSync(filePath)) {
+    return Error('model file does not exist');
   }
-  const extname = path.extname(filepath);
+  const extname = path.extname(filePath);
   if (isJson(extname) || isSource(extname)) {
-    return require(filepath) as JsonObject;
+    return require(filePath) as JsonObject;
   }
   return Error('file extension type should be either .json or .ts|.js');
 };

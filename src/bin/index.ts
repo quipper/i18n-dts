@@ -34,6 +34,6 @@ if (program.watch) {
       console.info(`Emitted: ${path.join(outputPath, OUTPUT_FILE_NAME)}`),
     )
     .catch(error =>
-      console.error(`Error occurred while emmiting: ${error.message}`),
+      console.error(`Error occurred while emitting: ${error.message}`),
     );
 }

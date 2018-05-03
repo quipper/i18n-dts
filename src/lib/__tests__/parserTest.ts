@@ -6,11 +6,11 @@ describe('parser', () => {
       expect(extractInterpolations('test')).toEqual([]);
     });
 
-    it('returns single macthed string', () => {
+    it('returns single matched string', () => {
       expect(extractInterpolations('{{test}}')).toEqual(['test']);
     });
 
-    it('returns multiple macthed strings', () => {
+    it('returns multiple matched strings', () => {
       expect(extractInterpolations('{{test}} {{test1}}')).toEqual([
         'test',
         'test1',
@@ -34,7 +34,7 @@ describe('parser', () => {
       ]);
     });
 
-    it('returns flatten key with interporation', () => {
+    it('returns flatten key with interpolation', () => {
       expect(
         flattenKeys({
           common: {
