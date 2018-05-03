@@ -8,9 +8,16 @@ With generated `d.ts` file you can treat `i18n` object type-safely as below!
 
 ## Installation
 
+#### NPM
+
 ```sh
-npm install --save react-native-typed-i18n # npm
-yarn add react-native-typed-i18n # yarn
+npm install -D react-native-typed-i18n
+```
+
+#### Yarn
+
+```sh
+yarn add -D react-native-typed-i18n
 ```
 
 ## Configuration
@@ -55,8 +62,6 @@ We recommend to add scripts into `package.json`.
   "typed-i18n:watch": "typed-i18n -w"
 },
 ```
-
-Check [example](https://github.com/quipper/react-native-typed-i18n/example) project for more detail.
 
 ## Options
 
