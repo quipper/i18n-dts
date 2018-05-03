@@ -1,5 +1,10 @@
 import * as path from 'path';
-import { getConfigFromPackageJson, isJson, isSource } from '../file';
+import {
+  getConfigFromPackageJson,
+  getTranslationFromModel,
+  isJson,
+  isSource,
+} from '../file';
 
 describe('file', () => {
   describe('getConfigFromPackageJson', () => {
@@ -52,12 +57,48 @@ describe('file', () => {
     it('returns false', () => {
       expect(isJson('.jsonp')).toBeFalsy();
     });
+  });
+
+  describe('isSource', () => {
     it('returns true', () => {
       expect(isSource('.ts')).toBeTruthy();
       expect(isSource('.js')).toBeTruthy();
     });
     it('returns false', () => {
       expect(isSource('.json')).toBeFalsy();
+    });
+  });
+
+  describe('getTranslationFromModel', () => {
+    it('returns error with no model file', () => {
+      const error = getTranslationFromModel(
+        path.resolve('./src/lib/__tests__/fixtures/notExist'),
+      );
+      expect(error instanceof Error).toBeTruthy();
+      expect((error as Error).message).toEqual('model file does not exist');
+    });
+
+    it('returns error with wrong file extension', () => {
+      const error = getTranslationFromModel(
+        path.resolve('./src/lib/__tests__/fixtures/jsonp/package.jsonp'),
+      );
+      expect(error instanceof Error).toBeTruthy();
+      expect((error as Error).message).toEqual(
+        'file extension type should be either .json or .ts|.js',
+      );
+    });
+
+    it('returns json object with json file', () => {
+      const config = getTranslationFromModel(
+        path.resolve('./src/lib/__tests__/fixtures/valid/package.json'),
+      );
+      expect(config instanceof Error).toBeFalsy();
+      expect(config).toEqual({
+        'react-native-typed-i18n': {
+          model: './en.json',
+          outputDir: './typings',
+        },
+      });
     });
   });
 });
