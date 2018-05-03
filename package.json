@@ -5,6 +5,9 @@
   "bin": {
     "typed-i18n": "build/bin/index.js"
   },
+  "repository": "https://github.com/quipper/react-native-typed-i18n",
+  "bugs": "https://github.com/quipper/react-native-typed-i18n/issues",
+  "keywords": ["react-native", "typescript"],
   "scripts": {
     "tsc": "tsc",
     "test": "jest"
@@ -33,15 +36,11 @@
     "testRegex": "(/__tests__/.*|(\\.|/)(Test))\\.(jsx?|tsx?)$",
     "testPathIgnorePatterns": [
       "<rootDir>/build/",
-      "<rootDir>/node_modules/"
+      "<rootDir>/node_modules/",
+      "<rootDir>/src/lib/__tests__/generated/",
+      "<rootDir>/src/lib/__tests__/expected/",
+      "<rootDir>/src/lib/__tests__/utils.ts"
     ],
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ]
+    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"]
   }
 }
