@@ -1,13 +1,16 @@
 {
-  "name": "react-native-typed-i18n",
+  "name": "react-native-i18n-ts",
   "version": "0.1.0",
   "description": "A tiny d.ts file generator for react-native-i18n",
   "bin": {
-    "typed-i18n": "build/bin/index.js"
+    "i18n-ts": "build/bin/index.js"
   },
-  "repository": "https://github.com/quipper/react-native-typed-i18n",
-  "bugs": "https://github.com/quipper/react-native-typed-i18n/issues",
-  "keywords": ["react-native", "typescript"],
+  "repository": "https://github.com/quipper/react-native-i18n-ts",
+  "bugs": "https://github.com/quipper/react-native-i18n-ts/issues",
+  "keywords": [
+    "react-native",
+    "typescript"
+  ],
   "scripts": {
     "tsc": "tsc",
     "test": "jest"
@@ -41,6 +44,13 @@
       "<rootDir>/src/lib/__tests__/expected/",
       "<rootDir>/src/lib/__tests__/utils.ts"
     ],
-    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"]
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   }
 }

@@ -11,8 +11,8 @@
     "start:ios": "yarn run build && concurrently -r 'yarn run watch' 'react-native run-ios'",
     "start:android": "yarn run build && concurrently -r 'yarn run watch' 'react-native run-android'",
     "test": "jest",
-    "typed-i18n": "typed-i18n",
-    "typed-i18n:watch": "typed-i18n -w"
+    "i18n-ts": "i18n-ts",
+    "i18n-ts:watch": "i18n-ts -w"
   },
   "dependencies": {
     "react": "16.3.1",
@@ -27,7 +27,7 @@
     "babel-preset-react-native-stage-0": "^1.0.1",
     "concurrently": "^3.5.1",
     "jest": "22.4.3",
-    "react-native-typed-i18n": "file:..",
+    "react-native-i18n-ts": "file:..",
     "react-test-renderer": "16.3.1",
     "rimraf": "^2.6.2",
     "ts-jest": "^21.0.1",
@@ -36,7 +36,7 @@
   "jest": {
     "preset": "react-native"
   },
-  "react-native-typed-i18n": {
+  "react-native-i18n-ts": {
     "model": "./src/locale/languages/en.json",
     "outputDir": "./typings"
   }

@@ -1,7 +1,7 @@
-# react-native-typed-i18n example
+# react-native-i18n-ts example
 
 ```sh
 npm install
-npm typed-i18n # or typed-i18n:watch
+npm i18n-ts # or i18n-ts:watch
 npm start:ios # or start:android
 ```

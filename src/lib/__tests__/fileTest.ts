@@ -84,7 +84,7 @@ describe('file', () => {
       );
       expect(config instanceof Error).toBeFalsy();
       expect(config).toEqual({
-        'react-native-typed-i18n': {
+        'react-native-i18n-ts': {
           model: './en.json',
           outputDir: './typings',
         },

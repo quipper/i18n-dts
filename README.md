@@ -1,23 +1,23 @@
-# react-native-typed-i18n [![CircleCI](https://circleci.com/gh/quipper/react-native-typed-i18n.svg?style=svg)](https://circleci.com/gh/quipper/react-native-typed-i18n) [![npm version](https://badge.fury.io/js/react-native-typed-i18n.svg)](https://badge.fury.io/js/react-native-typed-i18n)
+# react-native-i18n-ts [![CircleCI](https://circleci.com/gh/quipper/react-native-i18n-ts.svg?style=svg)](https://circleci.com/gh/quipper/react-native-i18n-ts) [![npm version](https://badge.fury.io/js/react-native-i18n-ts.svg)](https://badge.fury.io/js/react-native-i18n-ts)
 
-`react-native-typed-i18n` is a `d.ts` file generator for [react-native-i18n](https://github.com/AlexanderZaytsev/react-native-i18n).
+`react-native-i18n-ts` is a `d.ts` file generator for [react-native-i18n](https://github.com/AlexanderZaytsev/react-native-i18n).
 
 With generated `d.ts` file you can treat `I18n` object type-safely!
 
-![demo](https://raw.githubusercontent.com/quipper/react-native-typed-i18n/master/doc/demo.gif)
+![demo](https://raw.githubusercontent.com/quipper/react-native-i18n-ts/master/doc/demo.gif)
 
 ## Installation
 
 #### NPM
 
 ```sh
-npm install -D react-native-typed-i18n
+npm install -D react-native-i18n-ts
 ```
 
 #### Yarn
 
 ```sh
-yarn add -D react-native-typed-i18n
+yarn add -D react-native-i18n-ts
 ```
 
 ## Configuration
@@ -28,7 +28,7 @@ First of all specify the following settings in root `package.json`.
 - `outputDir`: `d.ts` file will be emitted in specified directory
 
 ```json
-"react-native-typed-i18n": {
+"react-native-i18n-ts": {
   "model": "./src/locale/languages/en.json",
   "outputDir": "./typings"
 }
@@ -52,14 +52,14 @@ And add `outputDir` dir into `filesGlob` option in `tsconfig.json`.
 ],
 ```
 
-That's it! Now you can use `typed-i18n` command which generates corresponding `d.ts` file.
+That's it! Now you can use `i18n-ts` command which generates corresponding `d.ts` file.
 
 We recommend to add scripts below into `package.json`.
 
 ```json
 "scripts": {
-  "typed-i18n": "typed-i18n",
-  "typed-i18n:watch": "typed-i18n -w"
+  "i18n-ts": "i18n-ts",
+  "i18n-ts:watch": "i18n-ts -w"
 },
 ```
 
@@ -69,10 +69,10 @@ We recommend to add scripts below into `package.json`.
 
 You can enable watch mode by adding `--watch` (shorthand `-w`) flag.
 
-In the watch mode, react-native-typed-i18n watches update of model file and generates d.ts file when the model is updated.
+In the watch mode, react-native-i18n-ts watches update of model file and generates d.ts file when the model is updated.
 
 ```sh
-typed-i18n --watch
+i18n-ts --watch
 ```
 
 ## Licence
