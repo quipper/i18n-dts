@@ -10,7 +10,7 @@ describe('file', () => {
   describe('getConfigFromPackageJson', () => {
     it('returns error with wrong directory', () => {
       const error = getConfigFromPackageJson(
-        path.resolve('./src/lib/__tests__/fixtures/wrongdir'),
+        path.resolve('./src/lib/__tests__/fixtures/not_exist'),
       );
       expect(error instanceof Error).toBeTruthy();
       expect((error as Error).message).toEqual(
@@ -20,17 +20,7 @@ describe('file', () => {
 
     it('returns error with no property json', () => {
       const error = getConfigFromPackageJson(
-        path.resolve('./src/lib/__tests__/fixtures/noprop'),
-      );
-      expect(error instanceof Error).toBeTruthy();
-      expect((error as Error).message).toEqual(
-        '"react-native-i18n" property does not exist on package.json',
-      );
-    });
-
-    it('returns error with invalid package.json', () => {
-      const error = getConfigFromPackageJson(
-        path.resolve('./src/lib/__tests__/fixtures/noprop'),
+        path.resolve('./src/lib/__tests__/fixtures/no_config'),
       );
       expect(error instanceof Error).toBeTruthy();
       expect((error as Error).message).toEqual(
@@ -72,7 +62,7 @@ describe('file', () => {
   describe('getTranslationFromModel', () => {
     it('returns error with no model file', () => {
       const error = getTranslationFromModel(
-        path.resolve('./src/lib/__tests__/fixtures/notExist'),
+        path.resolve('./src/lib/__tests__/fixtures/not_exist'),
       );
       expect(error instanceof Error).toBeTruthy();
       expect((error as Error).message).toEqual('model file does not exist');
@@ -80,7 +70,7 @@ describe('file', () => {
 
     it('returns error with wrong file extension', () => {
       const error = getTranslationFromModel(
-        path.resolve('./src/lib/__tests__/fixtures/jsonp/package.jsonp'),
+        path.resolve('./src/lib/__tests__/fixtures/wrong_ext_name/package.jsonp'),
       );
       expect(error instanceof Error).toBeTruthy();
       expect((error as Error).message).toEqual(
