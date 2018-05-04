@@ -1,8 +1,8 @@
 # react-native-typed-i18n [![CircleCI](https://circleci.com/gh/quipper/react-native-typed-i18n.svg?style=svg)](https://circleci.com/gh/quipper/react-native-typed-i18n) [![npm version](https://badge.fury.io/js/react-native-typed-i18n.svg)](https://badge.fury.io/js/react-native-typed-i18n)
 
-`react-native-typed-i18n` is a tiny `d.ts` file generator for [react-native-i18n](https://github.com/AlexanderZaytsev/react-native-i18n).
+`react-native-typed-i18n` is a `d.ts` file generator for [react-native-i18n](https://github.com/AlexanderZaytsev/react-native-i18n).
 
-With generated `d.ts` file you can treat `i18n` object type-safely as below!
+With generated `d.ts` file you can treat `I18n` object type-safely!
 
 ![demo](https://raw.githubusercontent.com/quipper/react-native-typed-i18n/master/doc/demo.gif)
 
@@ -34,7 +34,7 @@ First of all specify the following settings in root `package.json`.
 }
 ```
 
-Note that when you specify `.ts` or `.js` file as a model, use `module.exports` to export an object.
+Note that when you specify `.ts` or `.js` file type as a model, use `module.exports` to export an object.
 
 ```ts
 module.exports = {
@@ -44,7 +44,7 @@ module.exports = {
 };
 ```
 
-And add `outputDir` dir to `filesGlob` option in `tsconfig.json`.
+And add `outputDir` dir into `filesGlob` option in `tsconfig.json`.
 
 ```json
 "filesGlob": [
@@ -54,7 +54,7 @@ And add `outputDir` dir to `filesGlob` option in `tsconfig.json`.
 
 That's it! Now you can use `typed-i18n` command which generates corresponding `d.ts` file.
 
-We recommend to add scripts into `package.json`.
+We recommend to add scripts below into `package.json`.
 
 ```json
 "scripts": {
@@ -69,7 +69,7 @@ We recommend to add scripts into `package.json`.
 
 You can enable watch mode by adding `--watch` (shorthand `-w`) flag.
 
-In the watch mode, react-native-typed-i18n watches update of model file and generates declaration file when the model file is updated.
+In the watch mode, react-native-typed-i18n watches update of model file and generates d.ts file when the model is updated.
 
 ```sh
 typed-i18n --watch
