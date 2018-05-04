@@ -8,17 +8,11 @@ describe('generate', () => {
   const dirPath = './src/lib/__tests__/generated/';
   const filePath = `${dirPath}${OUTPUT_FILE_NAME}`;
 
-  beforeAll(() => {
-    mkdirSync(dirPath);
-  });
+  beforeAll(() => mkdirSync(dirPath));
 
-  afterAll(() => {
-    rmdirSync(dirPath);
-  });
+  afterAll(() => rmdirSync(dirPath));
 
-  afterEach(() => {
-    unlinkSync(filePath);
-  });
+  afterEach(() => unlinkSync(filePath));
 
   it('writes d.ts file with no key', async () => {
     expect.assertions(1);
