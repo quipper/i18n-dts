@@ -17,6 +17,37 @@ const fallbackVar = ts.createVariableStatement(
   ]),
 );
 
+const defaultLocaleVar = ts.createVariableStatement(
+  undefined,
+  ts.createVariableDeclarationList([
+    ts.createVariableDeclaration(
+      'defaultLocale',
+      ts.createKeywordTypeNode(ts.SyntaxKind.StringKeyword),
+    ),
+  ]),
+);
+
+const localeVar = ts.createVariableStatement(
+  undefined,
+  ts.createVariableDeclarationList([
+    ts.createVariableDeclaration(
+      'locale',
+      ts.createKeywordTypeNode(ts.SyntaxKind.StringKeyword),
+    ),
+  ]),
+);
+
+const currentLocale = ts.createFunctionDeclaration(
+  undefined,
+  undefined,
+  undefined,
+  'currentLocale',
+  undefined,
+  [],
+  ts.createKeywordTypeNode(ts.SyntaxKind.StringKeyword),
+  undefined,
+);
+
 const translationsVar = ts.createVariableStatement(
   undefined,
   ts.createVariableDeclarationList([
@@ -101,7 +132,14 @@ const i18nModule = (keys: Translation[]): ts.ModuleDeclaration =>
     undefined,
     [ts.createToken(ts.SyntaxKind.DeclareKeyword)],
     ts.createLiteral(MODULE_NAME),
-    ts.createModuleBlock([fallbackVar, translationsVar, ...tFuncs(keys)]),
+    ts.createModuleBlock([
+      fallbackVar,
+      translationsVar,
+      defaultLocaleVar,
+      localeVar,
+      currentLocale,
+      ...tFuncs(keys),
+    ]),
   );
 
 const valueVar = ts.createVariableStatement(
