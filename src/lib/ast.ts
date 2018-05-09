@@ -37,17 +37,16 @@ const localeVar = ts.createVariableStatement(
   ]),
 );
 
-const currentLocale = (): ts.FunctionDeclaration =>
-  ts.createFunctionDeclaration(
-    undefined,
-    undefined,
-    undefined,
-    'currentLocale',
-    undefined,
-    [],
-    ts.createKeywordTypeNode(ts.SyntaxKind.StringKeyword),
-    undefined,
-  );
+const currentLocale = ts.createFunctionDeclaration(
+  undefined,
+  undefined,
+  undefined,
+  'currentLocale',
+  undefined,
+  [],
+  ts.createKeywordTypeNode(ts.SyntaxKind.StringKeyword),
+  undefined,
+);
 
 const translationsVar = ts.createVariableStatement(
   undefined,
@@ -138,7 +137,7 @@ const i18nModule = (keys: Translation[]): ts.ModuleDeclaration =>
       translationsVar,
       defaultLocaleVar,
       localeVar,
-      currentLocale(),
+      currentLocale,
       ...tFuncs(keys),
     ]),
   );
