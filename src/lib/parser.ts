@@ -26,7 +26,7 @@ export const flattenKeys = (
       flattenKeys(value, flatKey, result);
     } else {
       const interpolations = extractInterpolations(value);
-      result.push({ key: flatKey, interpolations });
+      result.push({ key: flatKey, value, interpolations });
     }
   });
   return result;

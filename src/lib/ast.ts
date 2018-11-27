@@ -112,15 +112,15 @@ const tFuncParameters = (key: Translation): ts.ParameterDeclaration[] => {
   }
 };
 
-const tFunc = (key: Translation): ts.FunctionDeclaration =>
+const tFunc = (t: Translation): ts.FunctionDeclaration =>
   ts.createFunctionDeclaration(
     undefined,
     undefined,
     undefined,
     't',
     undefined,
-    tFuncParameters(key),
-    ts.createKeywordTypeNode(ts.SyntaxKind.StringKeyword),
+    tFuncParameters(t),
+    ts.createLiteralTypeNode(ts.createLiteral(t.value)),
     undefined,
   );
 
