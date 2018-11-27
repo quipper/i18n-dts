@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Platform, StyleSheet, Text, View } from 'react-native';
-import I18n from './locale';
+import i18n from './locale';
 
 const instructions = Platform.select({
-  ios: I18n.t('platform.ios'),
-  android: I18n.t('platform.android'),
+  ios: i18n.t('platform.ios'),
+  android: i18n.t('platform.android'),
 });
 
 const styles = StyleSheet.create({
@@ -34,7 +34,7 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>{I18n.t('title')}</Text>
+        <Text style={styles.welcome}>{i18n.t('title')}</Text>
         <Text style={styles.instructions}>{instructions}</Text>
       </View>
     );
