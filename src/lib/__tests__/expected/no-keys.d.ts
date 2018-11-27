@@ -1,4 +1,4 @@
-declare module "react-native-i18n" {
+declare module "i18n-js" {
     var fallbacks: boolean;
     var translations: {
         [keys: string]: any;

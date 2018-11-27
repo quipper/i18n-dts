@@ -10,7 +10,8 @@ export const getConfigFromPackageJson = (dir: string): Config | Error => {
   }
   const config = require(packageJsonPath)[CONFIG_NAME];
   if (!config) {
-    return Error('"react-native-i18n" property does not exist on package.json');
+    return Error(`\"${CONFIG_NAME}\" property does not exist on package.json`);
+
   }
   return {
     model: config.model,

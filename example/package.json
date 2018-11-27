@@ -37,7 +37,7 @@
   "jest": {
     "preset": "react-native"
   },
-  "react-native-i18n-ts": {
+  "i18n-ts": {
     "model": "./src/locale/languages/en.json",
     "outputDir": "./typings"
   }

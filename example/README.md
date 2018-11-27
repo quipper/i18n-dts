@@ -1,4 +1,4 @@
-# react-native-i18n-ts example
+# i18n-ts example
 
 ```sh
 npm install
