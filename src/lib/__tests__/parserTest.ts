@@ -30,6 +30,7 @@ describe('parser', () => {
         {
           interpolations: [],
           key: 'common.cancel',
+          value: "Cancel"
         },
       ]);
     });
@@ -45,6 +46,7 @@ describe('parser', () => {
         {
           interpolations: ['value'],
           key: 'common.cancel',
+          value: "Cancel {{value}}",
         },
       ]);
     });

@@ -14,6 +14,7 @@ describe('ast', () => {
         {
           interpolations: ['value'],
           key: 'common.cancel',
+          value: 'Cancel {{value}}',
         },
       ]);
       const expected = readFile('./src/lib/__tests__/expected/one-key.d.ts');
@@ -25,10 +26,12 @@ describe('ast', () => {
         {
           interpolations: ['value'],
           key: 'common.cancel',
+          value: 'Cancel {{value}}',
         },
         {
           interpolations: [],
           key: 'common.ok',
+          value: 'OK'
         },
       ]);
       const expected = readFile(

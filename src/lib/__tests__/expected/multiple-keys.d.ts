@@ -8,8 +8,8 @@ declare module "react-native-i18n" {
     function currentLocale(): string;
     function t(key: "common.cancel", opts: {
         value: any;
-    }): string;
-    function t(key: "common.ok"): string;
+    }): "Cancel {{value}}";
+    function t(key: "common.ok"): "OK";
 }
 
 declare module "*.json" {
