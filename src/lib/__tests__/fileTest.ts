@@ -1,4 +1,5 @@
 import * as path from 'path';
+import { CONFIG_NAME } from '../../constants';
 import {
   getConfigFromPackageJson,
   getTranslationFromModel,
@@ -24,7 +25,7 @@ describe('file', () => {
       );
       expect(error instanceof Error).toBeTruthy();
       expect((error as Error).message).toEqual(
-        '"react-native-i18n" property does not exist on package.json',
+        `\"${CONFIG_NAME}\" property does not exist on package.json`,
       );
     });
 
@@ -84,7 +85,7 @@ describe('file', () => {
       );
       expect(config instanceof Error).toBeFalsy();
       expect(config).toEqual({
-        'react-native-i18n-ts': {
+        'i18n-ts': {
           model: './en.json',
           outputDir: './typings',
         },

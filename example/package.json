@@ -15,9 +15,10 @@
     "i18n-ts:watch": "i18n-ts -w"
   },
   "dependencies": {
+    "i18n-js": "^3.1.0",
     "react": "16.3.1",
-    "react-native": "0.55.3",
-    "react-native-i18n": "^2.0.12"
+    "react-native": "^0.57.6",
+    "react-native-languages": "^3.0.1"
   },
   "devDependencies": {
     "@types/react": "^16.3.13",
@@ -27,7 +28,7 @@
     "babel-preset-react-native-stage-0": "^1.0.1",
     "concurrently": "^3.5.1",
     "jest": "22.4.3",
-    "react-native-i18n-ts": "^0.1.0",
+    "react-native-i18n-ts": "^0.1.1",
     "react-test-renderer": "16.3.1",
     "rimraf": "^2.6.2",
     "ts-jest": "^21.0.1",

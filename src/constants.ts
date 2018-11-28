@@ -1,6 +1,6 @@
 export const JSON_MODULE_NAME = '*.json';
-export const MODULE_NAME = 'react-native-i18n';
-export const CONFIG_NAME = `${MODULE_NAME}-ts`;
+export const MODULE_NAME = 'i18n-js';
+export const CONFIG_NAME = `i18n-ts`;
 export const OUTPUT_FILE_NAME = `${MODULE_NAME}.d.ts`;
 export const PACKAGE_JSON = 'package.json';
 export const INTERPOLATION_PATTERN = /\{\{([a-zA-Z0-9]+)\}\}/;
