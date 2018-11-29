@@ -85,7 +85,7 @@ describe('file', () => {
       );
       expect(config instanceof Error).toBeFalsy();
       expect(config).toEqual({
-        'i18n-ts': {
+        'i18n-dts': {
           model: './en.json',
           outputDir: './typings',
         },

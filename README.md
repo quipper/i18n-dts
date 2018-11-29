@@ -1,23 +1,23 @@
-# i18n-ts [![CircleCI](https://circleci.com/gh/quipper/i18n-ts.svg?style=svg)](https://circleci.com/gh/quipper/i18n-ts) [![npm version](https://badge.fury.io/js/i18n-ts.svg)](https://badge.fury.io/js/i18n-ts)
+# i18n-dts [![CircleCI](https://circleci.com/gh/quipper/i18n-dts.svg?style=svg)](https://circleci.com/gh/quipper/i18n-dts) [![npm version](https://badge.fury.io/js/i18n-dts.svg)](https://badge.fury.io/js/i18n-dts)
 
-`i18n-ts` is a `d.ts` file generator for [react-native-i18n](https://github.com/fnando/i18n-js).
+`i18n-dts` is a `d.ts` file generator for [react-native-i18n](https://github.com/fnando/i18n-js).
 
 With generated `d.ts` file you can treat `I18n` object type-safely!
 
-![demo](https://raw.githubusercontent.com/quipper/i18n-ts/master/doc/demo.gif)
+![demo](https://raw.githubusercontent.com/quipper/i18n-dts/master/doc/demo.gif)
 
 ## Installation
 
 #### NPM
 
 ```sh
-npm install -D i18n-ts
+npm install -D i18n-dts
 ```
 
 #### Yarn
 
 ```sh
-yarn add -D i18n-ts
+yarn add -D i18n-dts
 ```
 
 ## Configuration
@@ -28,7 +28,7 @@ First of all specify the following settings in root `package.json`.
 - `outputDir`: `d.ts` file will be emitted in specified directory
 
 ```json
-"i18n-ts": {
+"i18n-dts": {
   "model": "./src/locale/languages/en.json",
   "outputDir": "./typings"
 }
@@ -52,14 +52,14 @@ And add `outputDir` dir into `filesGlob` option in `tsconfig.json`.
 ],
 ```
 
-That's it! Now you can use `i18n-ts` command which generates corresponding `d.ts` file.
+That's it! Now you can use `i18n-dts` command which generates corresponding `d.ts` file.
 
 We recommend to add scripts below into `package.json`.
 
 ```json
 "scripts": {
-  "i18n-ts": "i18n-ts",
-  "i18n-ts:watch": "i18n-ts -w"
+  "i18n-dts": "i18n-dts",
+  "i18n-dts:watch": "i18n-dts -w"
 },
 ```
 
@@ -69,10 +69,10 @@ We recommend to add scripts below into `package.json`.
 
 You can enable watch mode by adding `--watch` (shorthand `-w`) flag.
 
-In the watch mode, i18n-ts watches update of model file and generates d.ts file when the model is updated.
+In the watch mode, i18n-dts watches update of model file and generates d.ts file when the model is updated.
 
 ```sh
-i18n-ts --watch
+i18n-dts --watch
 ```
 
 ## Licence

@@ -1,12 +1,12 @@
 {
-  "name": "i18n-ts",
-  "version": "0.1.1",
+  "name": "i18n-dts",
+  "version": "0.2.0",
   "description": "A tiny d.ts file generator for react-native-i18n",
   "bin": {
-    "i18n-ts": "build/bin/index.js"
+    "i18n-dts": "build/bin/index.js"
   },
-  "repository": "https://github.com/quipper/i18n-ts",
-  "bugs": "https://github.com/quipper/i18n-ts/issues",
+  "repository": "https://github.com/quipper/i18n-dts",
+  "bugs": "https://github.com/quipper/i18n-dts/issues",
   "keywords": [
     "react-native",
     "typescript"
@@ -28,7 +28,7 @@
     "@types/node": "^9.4.6",
     "jest": "^22.4.3",
     "prettier": "^1.12.1",
-    "ts-jest": "^22.4.4",
+    "ts-jest": "^23.10.5",
     "tslint": "^5.9.1",
     "tslint-config-prettier": "^1.12.0"
   },
