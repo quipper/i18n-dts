@@ -1,7 +1,7 @@
-# i18n-ts example
+# i18n-dts example
 
 ```sh
 npm install
-npm i18n-ts # or i18n-ts:watch
+npm i18n-dts # or i18n-dts:watch
 npm start:ios # or start:android
 ```
