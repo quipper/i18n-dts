@@ -2,6 +2,6 @@
 
 ```sh
 npm install
-npm i18n-dts # or i18n-dts:watch
-npm start:ios # or start:android
+npm run i18n-dts # or i18n-dts:watch
+npm run start:ios # or start:android
 ```
