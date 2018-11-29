@@ -1,23 +1,23 @@
-# react-native-i18n-ts [![CircleCI](https://circleci.com/gh/quipper/react-native-i18n-ts.svg?style=svg)](https://circleci.com/gh/quipper/react-native-i18n-ts) [![npm version](https://badge.fury.io/js/react-native-i18n-ts.svg)](https://badge.fury.io/js/react-native-i18n-ts)
+# i18n-ts [![CircleCI](https://circleci.com/gh/quipper/i18n-ts.svg?style=svg)](https://circleci.com/gh/quipper/i18n-ts) [![npm version](https://badge.fury.io/js/i18n-ts.svg)](https://badge.fury.io/js/i18n-ts)
 
-`react-native-i18n-ts` is a `d.ts` file generator for [react-native-i18n](https://github.com/AlexanderZaytsev/react-native-i18n).
+`i18n-ts` is a `d.ts` file generator for [react-native-i18n](https://github.com/fnando/i18n-js).
 
 With generated `d.ts` file you can treat `I18n` object type-safely!
 
-![demo](https://raw.githubusercontent.com/quipper/react-native-i18n-ts/master/doc/demo.gif)
+![demo](https://raw.githubusercontent.com/quipper/i18n-ts/master/doc/demo.gif)
 
 ## Installation
 
 #### NPM
 
 ```sh
-npm install -D react-native-i18n-ts
+npm install -D i18n-ts
 ```
 
 #### Yarn
 
 ```sh
-yarn add -D react-native-i18n-ts
+yarn add -D i18n-ts
 ```
 
 ## Configuration
@@ -28,7 +28,7 @@ First of all specify the following settings in root `package.json`.
 - `outputDir`: `d.ts` file will be emitted in specified directory
 
 ```json
-"react-native-i18n-ts": {
+"i18n-ts": {
   "model": "./src/locale/languages/en.json",
   "outputDir": "./typings"
 }
@@ -69,7 +69,7 @@ We recommend to add scripts below into `package.json`.
 
 You can enable watch mode by adding `--watch` (shorthand `-w`) flag.
 
-In the watch mode, react-native-i18n-ts watches update of model file and generates d.ts file when the model is updated.
+In the watch mode, i18n-ts watches update of model file and generates d.ts file when the model is updated.
 
 ```sh
 i18n-ts --watch

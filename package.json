@@ -1,12 +1,12 @@
 {
-  "name": "react-native-i18n-ts",
+  "name": "i18n-ts",
   "version": "0.1.1",
   "description": "A tiny d.ts file generator for react-native-i18n",
   "bin": {
     "i18n-ts": "build/bin/index.js"
   },
-  "repository": "https://github.com/quipper/react-native-i18n-ts",
-  "bugs": "https://github.com/quipper/react-native-i18n-ts/issues",
+  "repository": "https://github.com/quipper/i18n-ts",
+  "bugs": "https://github.com/quipper/i18n-ts/issues",
   "keywords": [
     "react-native",
     "typescript"
