@@ -1,6 +1,6 @@
 # i18n-dts [![CircleCI](https://circleci.com/gh/quipper/i18n-dts.svg?style=svg)](https://circleci.com/gh/quipper/i18n-dts) [![npm version](https://badge.fury.io/js/i18n-dts.svg)](https://badge.fury.io/js/i18n-dts)
 
-`i18n-dts` is a `d.ts` file generator for [react-native-i18n](https://github.com/fnando/i18n-js).
+`i18n-dts` is a `d.ts` file generator for [i18n-js](https://github.com/fnando/i18n-js).
 
 With generated `d.ts` file you can treat `I18n` object type-safely!
 
