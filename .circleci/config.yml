@@ -1,15 +1,15 @@
 version: 2
 jobs:
   bundle_dependencies:
-    working_directory: ~/react-native-i18n-ts
+    working_directory: ~/i18n-ts
     docker:
       - image: circleci/node:8.7.0
     steps:
       - checkout
       - restore_cache:
           keys:
-            - react-native-i18n-ts-{{ arch }}-{{ .Branch }}-{{ checksum "package-lock.json" }}
-            - react-native-i18n-ts-{{ arch }}
+            - i18n-ts-{{ arch }}-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - i18n-ts-{{ arch }}
       - run:
           name: System information
           command: |
@@ -19,20 +19,20 @@ jobs:
           name: Install dependencies
           command: 'npm install'
       - save_cache:
-          key: react-native-i18n-ts-{{ arch }}-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          key: i18n-ts-{{ arch }}-{{ .Branch }}-{{ checksum "package-lock.json" }}
           paths:
-            - ~/react-native-i18n-ts/node_modules
+            - ~/i18n-ts/node_modules
 
   compile_and_test:
-    working_directory: ~/react-native-i18n-ts
+    working_directory: ~/i18n-ts
     docker:
       - image: circleci/node:8.7.0
     steps:
       - checkout
       - restore_cache:
           keys:
-            - react-native-i18n-ts-{{ arch }}-{{ .Branch }}-{{ checksum "package-lock.json" }}
-            - react-native-i18n-ts-{{ arch }}
+            - i18n-ts-{{ arch }}-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - i18n-ts-{{ arch }}
       - run:
           name: Install dependencies
           command: 'npm install'
@@ -44,15 +44,15 @@ jobs:
           command: 'npm test'
 
   deploy_to_npm:
-    working_directory: ~/react-native-i18n-ts
+    working_directory: ~/i18n-ts
     docker:
       - image: circleci/node:8.7.0
     steps:
       - checkout
       - restore_cache:
           keys:
-            - react-native-i18n-ts-{{ arch }}-{{ .Branch }}-{{ checksum "package-lock.json" }}
-            - react-native-i18n-ts-{{ arch }}
+            - i18n-ts-{{ arch }}-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - i18n-ts-{{ arch }}
       - run:
           name: Install dependencies
           command: 'npm install'
