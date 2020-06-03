@@ -120,7 +120,13 @@ const tFunc = (t: Translation): ts.FunctionDeclaration =>
     't',
     undefined,
     tFuncParameters(t),
-    ts.createLiteralTypeNode(ts.createLiteral(t.value)),
+    Array.isArray(t.value)
+      ? ts.createUnionTypeNode(
+          t.value.map((value: string) =>
+            ts.createLiteralTypeNode(ts.createLiteral(value)),
+          ),
+        )
+      : ts.createLiteralTypeNode(ts.createLiteral(t.value)),
     undefined,
   );
 

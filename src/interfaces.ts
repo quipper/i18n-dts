@@ -5,7 +5,7 @@ export interface Config {
 
 export interface Translation {
   key: string;
-  value: string;
+  value: string | string[];
   interpolations: string[];
 }
 

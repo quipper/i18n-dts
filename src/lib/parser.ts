@@ -1,5 +1,8 @@
-import { INTERPOLATION_PATTERN } from '../constants';
+import { INTERPOLATION_PATTERN, PLURALIZATION_KEYS } from '../constants';
 import { JsonObject, Translation } from '../interfaces';
+
+const isPluralized = (json: JsonObject) =>
+  Object.keys(json).every(key => PLURALIZATION_KEYS.includes(key));
 
 export const extractInterpolations = (str: string): string[] => {
   const interpolations = [];
@@ -23,7 +26,20 @@ export const flattenKeys = (
     const flatKey = prefix ? `${prefix}.${key}` : key;
     const value = json[key];
     if (typeof value === 'object') {
-      flattenKeys(value, flatKey, result);
+      if (isPluralized(value)) {
+        let interpolations = ['count'];
+        const values: string[] = [];
+        Object.keys(value).map(key => {
+          const pluralValue: string = value[key];
+          interpolations = interpolations.concat(
+            extractInterpolations(pluralValue),
+          );
+          values.push(pluralValue);
+        });
+        result.push({ key: flatKey, value: values, interpolations });
+      } else {
+        flattenKeys(value, flatKey, result);
+      }
     } else {
       const interpolations = extractInterpolations(value);
       result.push({ key: flatKey, value, interpolations });
