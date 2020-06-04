@@ -1,7 +1,8 @@
 import { INTERPOLATION_PATTERN, PLURALIZATION_KEYS } from '../constants';
 import { JsonObject, Translation } from '../interfaces';
 
-const isPluralized = (json: JsonObject) =>
+export const isPluralized = (json: JsonObject) =>
+  Object.keys(json).length > 0 &&
   Object.keys(json).every(key => PLURALIZATION_KEYS.includes(key));
 
 export const extractInterpolations = (str: string): string[] => {
