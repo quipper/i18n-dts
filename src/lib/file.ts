@@ -35,6 +35,7 @@ export const getTranslationFromModel = (
   }
   const extname = path.extname(filePath);
   if (isJson(extname) || isSource(extname)) {
+    delete require.cache[require.resolve(filePath)];
     return require(filePath) as JsonObject;
   }
   return Error('file extension type should be either .json or .ts|.js');
