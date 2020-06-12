@@ -39,5 +39,19 @@ describe('ast', () => {
       );
       expect(actual).toEqual(expected);
     });
+
+    it('returns dts file with union types', () => {
+      const actual = dts([
+        {
+          interpolations: ['count'],
+          key: 'common.items',
+          value: ['One item.', '{{count}} items.'],
+        },
+      ]);
+      const expected = readFile(
+        './src/lib/__tests__/expected/union-types.d.ts',
+      );
+      expect(actual).toEqual(expected);
+    });
   });
 });
