@@ -31,7 +31,7 @@ describe('ast', () => {
         {
           interpolations: [],
           key: 'common.ok',
-          value: 'OK'
+          value: 'OK',
         },
       ]);
       const expected = readFile(
@@ -46,6 +46,11 @@ describe('ast', () => {
           interpolations: ['count'],
           key: 'common.items',
           value: ['One item.', '{{count}} items.'],
+        },
+        {
+          interpolations: [],
+          key: 'common.uncountedItems',
+          value: ['One item.', 'Many items.'],
         },
       ]);
       const expected = readFile(

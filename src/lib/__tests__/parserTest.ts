@@ -83,13 +83,24 @@ describe('parser', () => {
       expect(
         isPluralized({
           one: 'test',
+        }),
+      ).toEqual(true);
+      expect(
+        isPluralized({
+          other: 'test',
+          zero: 'test',
+        }),
+      ).toEqual(true);
+      expect(
+        isPluralized({
+          one: 'test',
           other: 'test',
           zero: 'test',
         }),
       ).toEqual(true);
     });
 
-    it('returns false for objects that containa keys that are not pluralization keys', () => {
+    it('returns false for objects that contain keys that are not pluralization keys', () => {
       expect(
         isPluralized({
           one: 'test',

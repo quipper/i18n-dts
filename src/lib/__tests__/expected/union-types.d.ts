@@ -9,6 +9,7 @@ declare module "i18n-js" {
     function t(key: "common.items", opts: {
         count: any;
     }): "One item." | "{{count}} items.";
+    function t(key: "common.uncountedItems"): "One item." | "Many items.";
 }
 
 declare module "*.json" {
