@@ -76,6 +76,28 @@ describe('parser', () => {
         },
       ]);
     });
+
+    it('handles pluralized objects with custom pluralization keys', () => {
+      expect(
+        flattenKeys(
+          {
+            common: {
+              items: {
+                one: 'One {{type}} item.',
+                many: 'Many {{type}} items.',
+              },
+            },
+          },
+          ['one', 'many'],
+        ),
+      ).toEqual([
+        {
+          interpolations: ['count', 'type', 'type'],
+          key: 'common.items',
+          value: ['One {{type}} item.', 'Many {{type}} items.'],
+        },
+      ]);
+    });
   });
 
   describe('isPluralized', () => {
@@ -108,6 +130,38 @@ describe('parser', () => {
           zero: 'test',
           somethingElse: 'test',
         }),
+      ).toEqual(false);
+    });
+
+    it('supports overriding pluralization keys with the second argument', () => {
+      expect(
+        isPluralized(
+          {
+            few: 'test',
+          },
+          ['few', 'many'],
+        ),
+      ).toEqual(true);
+
+      expect(
+        isPluralized(
+          {
+            few: 'test',
+            many: 'test',
+          },
+          ['few', 'many'],
+        ),
+      ).toEqual(true);
+
+      expect(
+        isPluralized(
+          {
+            few: 'test',
+            many: 'test',
+            other: 'test',
+          },
+          ['few', 'many'],
+        ),
       ).toEqual(false);
     });
 

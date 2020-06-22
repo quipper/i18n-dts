@@ -3,9 +3,13 @@ import * as path from 'path';
 import { OUTPUT_FILE_NAME } from '../constants';
 import { JsonObject } from '../interfaces';
 import { getTranslationFromModel } from './file';
-import { generate } from './generate';
+import { generate, GenerateOptions } from './generate';
 
-export const watch = (filePath: string, outputPath: string) => {
+export const watch = (
+  filePath: string,
+  outputPath: string,
+  generateOptions?: GenerateOptions,
+) => {
   console.info(`Start watching: ${filePath}`);
 
   watchFile(filePath, (current, prev) => {
@@ -19,7 +23,7 @@ export const watch = (filePath: string, outputPath: string) => {
       console.error(translationOrError.message);
     }
     const translation = translationOrError as JsonObject;
-    generate(translation, outputPath)
+    generate(translation, outputPath, generateOptions)
       .then(() =>
         console.info(`Emitted: ${path.join(outputPath, OUTPUT_FILE_NAME)}`),
       )
