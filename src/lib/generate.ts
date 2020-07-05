@@ -6,14 +6,19 @@ import { JsonObject } from '../interfaces';
 import { dts } from './ast';
 import { flattenKeys } from './parser';
 
+export interface GenerateOptions {
+  pluralizationKeys?: string[];
+}
+
 export const generate = (
   translations: JsonObject,
   dirPath: string,
+  options: GenerateOptions = {},
 ): Promise<void> => {
   if (!existsSync(dirPath)) {
     mkdirp.sync(dirPath);
   }
-  const keys = flattenKeys(translations);
+  const keys = flattenKeys(translations, options.pluralizationKeys);
   const data = dts(keys);
   const outputPath = path.join(dirPath, OUTPUT_FILE_NAME);
   return execWriteFile(outputPath, data);

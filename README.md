@@ -75,6 +75,14 @@ In the watch mode, i18n-dts watches update of model file and generates d.ts file
 i18n-dts --watch
 ```
 
+### Custom pluralization keys
+
+The [i18n-js](https://github.com/fnando/i18n-js) library supports defining your own pluralization rules. If you've added or changed the rules, you might need to override the default keys (zero, one, other) that i18n-dts looks for to determine if a string should be treated as a pluralized definition. To do this, use the `--pluralization-keys <keys>` (shorthand `-k`) flag with a list of comma-separated keys.
+
+```sh
+i18n-dts --pluralization-keys zero,one,other,many
+```
+
 ## Licence
 
 ```

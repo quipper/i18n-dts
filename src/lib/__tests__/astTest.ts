@@ -31,11 +31,30 @@ describe('ast', () => {
         {
           interpolations: [],
           key: 'common.ok',
-          value: 'OK'
+          value: 'OK',
         },
       ]);
       const expected = readFile(
         './src/lib/__tests__/expected/multiple-keys.d.ts',
+      );
+      expect(actual).toEqual(expected);
+    });
+
+    it('returns dts file with union types', () => {
+      const actual = dts([
+        {
+          interpolations: ['count'],
+          key: 'common.items',
+          value: ['One item.', '{{count}} items.'],
+        },
+        {
+          interpolations: [],
+          key: 'common.uncountedItems',
+          value: ['One item.', 'Many items.'],
+        },
+      ]);
+      const expected = readFile(
+        './src/lib/__tests__/expected/union-types.d.ts',
       );
       expect(actual).toEqual(expected);
     });
