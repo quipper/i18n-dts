@@ -1,6 +1,6 @@
 {
   "name": "i18n-dts",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A tiny d.ts file generator for react-native-i18n",
   "bin": {
     "i18n-dts": "build/bin/index.js"
