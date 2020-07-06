@@ -1,3 +1,6 @@
+* 0.3.0 2020/07/06
+  * [Add][Pluralization support](https://github.com/quipper/i18n-dts/pull/15)
+  * [Improve][Make sure the latest uncached translation file is read when using --watch](https://github.com/quipper/i18n-dts/pull/16)
 * 0.2.0 2018/11/29
   * Library name has been renamed to `i18n-dts` in favor of [react-native-i18n](https://github.com/AlexanderZaytsev/react-native-i18n) deprecation! Now you can use the library on both Web and React Native project.
   * [Improve] [Change return type to string literal ](https://github.com/quipper/i18n-dts/pull/7)
