@@ -4,6 +4,9 @@ jobs:
     working_directory: ~/i18n-dts
     docker:
       - image: circleci/node:8.7.0
+        auth: &dockerhub_auth
+          username: $DOCKERHUB_USER
+          password: $DOCKERHUB_PASSWORD
     steps:
       - checkout
       - restore_cache:
@@ -27,6 +30,7 @@ jobs:
     working_directory: ~/i18n-dts
     docker:
       - image: circleci/node:8.7.0
+        auth: *dockerhub_auth
     steps:
       - checkout
       - restore_cache:
@@ -47,6 +51,7 @@ jobs:
     working_directory: ~/i18n-dts
     docker:
       - image: circleci/node:8.7.0
+        auth: *dockerhub_auth
     steps:
       - checkout
       - restore_cache:
